@@ -1,5 +1,6 @@
 # Docker_cflow
 Dockerfile for GNU cflow.
+On Docker Hub, it is named as `minosjp/cflow`.
 
 ## Usage
 
@@ -12,5 +13,5 @@ Dockerfile for GNU cflow.
 
 ```
 $ cd ~/work/foo_proj
-$ find . -name "*.c" -exec docker run -v ~/work/foo_proj:/target --tree {} +
+$ find . -name "*.c" -exec docker run --rm -v ~/work/foo_proj:/target minosjp/cflow --tree {} +
 ```
