@@ -27,10 +27,16 @@ jobs:
           push: true
           tags: minosjp/cflow:latest
   update_readme_and_desc:
-    name: Update README and description on Docker Hub
-    uses: peter-evans/dockerhub-description@v2
-    with:
-      username: ${{ env.DOCKERHUB_USERNAME }}
-      password: ${{ env.DOCKERHUB_TOKEN }}
-      repository: minosjp/cflow
-      short-description: For running GNU cflow on Debian slim.
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Check out the repo
+        uses: actions/checkout@v2
+      -
+        name: Update README and description on Docker Hub
+        uses: peter-evans/dockerhub-description@v2
+        with:
+          username: ${{ env.DOCKERHUB_USERNAME }}
+          password: ${{ env.DOCKERHUB_TOKEN }}
+          repository: minosjp/cflow
+          short-description: For running GNU cflow on Debian slim.
