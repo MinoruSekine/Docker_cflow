@@ -26,12 +26,6 @@ jobs:
         with:
           push: true
           tags: minosjp/cflow:latest
-  update_readme_and_desc:
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: Check out the repo
-        uses: actions/checkout@v2
       -
         name: Update README and description on Docker Hub
         uses: peter-evans/dockerhub-description@v2
