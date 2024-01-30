@@ -40,3 +40,4 @@ jobs:
           password: ${{ env.DOCKERHUB_TOKEN }}
           repository: minosjp/cflow
           short-description: For running GNU cflow on Debian slim.
+          readme-filepath: ./README.md
