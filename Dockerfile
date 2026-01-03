@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:trixie-slim
 
 RUN apt update && \
     apt install -y --no-install-recommends cflow
