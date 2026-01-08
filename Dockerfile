@@ -1,5 +1,8 @@
-FROM debian:buster-slim
-RUN apt update && \
-    apt install -y --no-install-recommends cflow
+FROM debian:trixie-slim
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends cflow && \
+    rm -rf /var/lib/apt/lists/*
+
 WORKDIR /target
 ENTRYPOINT ["cflow"]
