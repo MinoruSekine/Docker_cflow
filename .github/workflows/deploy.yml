@@ -28,7 +28,9 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: minosjp/cflow:latest
+          tags: |
+            minosjp/cflow:latest
+            minosjp/cflow:${{ github.event.release.tag_name }}
 
   update_readme_and_desc:
     runs-on: ubuntu-latest
